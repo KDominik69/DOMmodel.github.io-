@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOO gomb</title>
     <style>
-        #message {
+        #szöv {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 2em;
+            font-size: 100px;
             color: red;
             display: none;
         }
     </style>
 </head>
 <body>
-    <button onclick="showMessage()">BOO</button>
-    <div id="message"></div>
+    <button onclick="showMessage()">Ilyesztés</button>
+    <div id="szöv"></div>
 
     <script>
         function showMessage() {
-            const messageDiv = document.getElementById('message');
-            messageDiv.innerText = 'BOO nagyban';
+            const messageDiv = document.getElementById('szöv');
+            messageDiv.innerText = 'BOO ';
             messageDiv.style.display = 'block';
         }
     </script>
