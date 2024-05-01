@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-model alkalmazása</title>
+    <style>
+       
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+       
+        .container {
+            text-align: center;
+        }
+       
+        .Kész {
+            font-size: 50px;
+            background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>DOM-model alkalmazása</h1>
+ 
+    <select id="Kv">
+        <option value="Hsz">Színes háttér</option>
+        <option value="Ksz">Készítő</option>
+        <option value="Kép">Random kép</option>
+    </select>
+
+    <div id="Vál"></div>
+</div>
+
+<script>
+    
+    const Kv = document.getElementById('Kv');
+    const dynamicContent = document.getElementById('Vál'); 
+
+    Kv.addEventListener('change', function() { 
+        const selectedValue = this.value; 
+        if (selectedValue === 'Hsz') { 
+            document.body.style.background = 'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)';
+        } 
+
+        if (selectedValue === 'Ksz') { 
+            document.body.style.background = 'lime';
+            dynamicContent.innerHTML = '<div class="Kész">Kmetz Dominik János</div>';
+        } else {
+            dynamicContent.innerHTML = '';
+        }
+
+        if (selectedValue === 'Kép') { 
+            document.body.style.background = 'blue';
+            dynamicContent.innerHTML += '<img src="https://source.unsplash.com/random/400x300" alt="Random kép">';
+        }
+        
+        
+    });
+</script>
+
+</body>
+</html>
